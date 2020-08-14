@@ -145,12 +145,12 @@ constructor (instrctorAttrs){
   this.specialty = instrctorAttrs.specialty;
   this.favLanguage = instrctorAttrs.favLanguage;
   this.catchPhrase = instrctorAttrs.catchPhrase;
-}demo(subject){
-  return (`Today we are learning about ${subject}.`)
-}
-grade(student, subject){
-  return `${student.name} receives a perfect score on ${subject}.`
-}
+  }demo(subject){
+    return (`Today we are learning about ${subject}.`)
+  }
+  grade(student, subject){
+    return `${student.name} receives a perfect score on ${subject}.`
+  }
 }
 
 /*
@@ -174,6 +174,7 @@ class Student extends Lambdasian{
     this.previousBackground= studentAttrs.previousBackground;
     this.className=studentAttrs.className;
     this.favSubjects=studentAttrs.favSubjects;
+    this.grade=Math.floor(Math.random()*100)+1;
   }
   listSubjects(){
     return `Loving${this.favSubjects.join(", ")}`
@@ -183,6 +184,13 @@ class Student extends Lambdasian{
   }
   sprintChallenge(subject){
     return `${this.name} has begun sprint challenge on ${subject}.`
+  }
+  graduate(){
+    if (grade > 70){
+      return `${student.name} is ready to gradute from Lambda!`
+    }else {
+      return `${student.name} has to stay in school!`
+    };
   }
 }
 
@@ -205,6 +213,12 @@ class ProjectManager extends Instructor{
     this.gradClassName=pmAttrs.gradClassName;
     this.favInstructor=pmAttrs.favInstructor;
   }
+  standUp(slackChannel){
+    return `${this.name} announces to ${slackChannel}, @${slackChannel} standy times!`
+  };
+  debugsCode(student, subject){
+    return `${this.name} debugs ${student.name}'s code on ${subject}.`
+  };
 }
 
 /*
