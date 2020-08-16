@@ -187,9 +187,9 @@ class Student extends Lambdasian{
   }
   graduate(){
     if (grade > 70){
-      return `${student.name} is ready to gradute from Lambda!`
+      return `${student.name} has a grade of ${this.grade}% and is ready to gradute from Lambda!`
     }else {
-      return `${student.name} has to stay in school!`
+      return `${student.name} has a grade of ${this.grade}% and has to stay in school!`
     };
   }
 }
